@@ -3,6 +3,7 @@ package interfaces;
 import java.util.ArrayList;
 
 public class Animal {
+    // Superclass
     ArrayList<Speakable> speakingAnimals;
 
     public Animal() {
