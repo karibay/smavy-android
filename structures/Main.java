@@ -13,6 +13,7 @@ public class Main {
         list.add(1);
         list.add(9);
         list.add(9);
-        System.out.println(list);
+        System.out.println(list.length());
+
     }
 }
