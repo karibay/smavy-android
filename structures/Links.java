@@ -37,6 +37,23 @@ public class Links {
         values += cursor.getValue();
         return values;
     }
+
+    public int length() {
+        int length = 0;
+        Node cursor = firstNode;
+        if (cursor == null) {
+            return length;
+        }else{
+            do{
+                length++;
+                cursor = cursor.getNextNode();
+            } while (cursor.getNextNode() != null);
+        length++;
+        }
+        return length;
+
+    }
+
 }
 
-//Helloo
+
