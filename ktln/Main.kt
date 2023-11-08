@@ -7,5 +7,6 @@ fun main(){
     list.add(35)
     list.add(33)
     list.add(45)
+    list.del(33)
     println(list)
 }
