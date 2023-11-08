@@ -7,7 +7,7 @@ class LinkedList {
         if (firstNode == null) {
             firstNode = node
             lastNode = firstNode
-        } else if (lastNode == null) {
+        } else if (lastNode == firstNode) {
             lastNode = node
             firstNode.apply {
                 this?.nextNode = node
@@ -21,11 +21,22 @@ class LinkedList {
     fun del(index: Int){
         var i: Int = 0
         var cursor: Node? = firstNode
-        while (i < index){
+
+        while (i < index-1){
             cursor = cursor?.nextNode
             i++
         }
-        cursor.apply { this?.nextNode = this?.nextNode?.nextNode }
+
+        if (cursor == firstNode){
+            firstNode.apply { this?.nextNode = null }
+            firstNode = firstNode?.nextNode
+        } else if (cursor?.nextNode == lastNode){
+            lastNode = cursor
+            cursor.apply { this?.nextNode = null }
+        } else {
+            cursor.apply { this?.nextNode = this?.nextNode?.nextNode }
+        }
+
     }
     fun add(value: Int) {
         add(Node(value))
